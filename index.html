@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apollo — Cadência Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #080c14;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 28px 32px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e2535;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -.02em;
+    }
+
+    header span {
+      font-size: .78rem;
+      color: #334155;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid #1e2535;
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .section-title {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+
+    .insight-body h3, .insight-body h4, .insight-body h5 {
+      color: #c7d2fe;
+      font-size: .9rem;
+      margin: 12px 0 4px;
+    }
+    .insight-body p {
+      color: #64748b;
+      font-size: .82rem;
+      line-height: 1.65;
+      margin-bottom: 6px;
+    }
+    .insight-body ul {
+      padding-left: 16px;
+      margin: 4px 0 8px;
+    }
+    .insight-body li {
+      color: #64748b;
+      font-size: .82rem;
+      line-height: 1.7;
+    }
+    .insight-body strong { color: #a5b4fc; }
+
+    tbody tr:hover { background: #111827; }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: .72rem;
+      color: #1e293b;
+    }
+
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Apollo · Cadência Dashboard</h1>
+    <span>Gerado em 20/03/2026 às 14:49 · Powered by Claude</span>
+  </header>
+
+  <div class="layout">
+    <!-- Coluna esquerda: funil + taxas + KPIs -->
+    <div>
+      
+  <section class="card" style="margin-bottom:24px">
+    <h2 class="section-title">📬 Funil de Cadência</h2>
+    <div style="display:flex;flex-direction:column;gap:6px;padding:8px 0">
+      
+        
+        <div style="width:100%;margin:0 auto;background:#6366f118;border:1px solid #6366f144;
+                    border-radius:10px;padding:14px 20px;display:flex;
+                    justify-content:space-between;align-items:center;">
+          <span style="font-size:.9rem;color:#cbd5e1;font-weight:600">Disparados</span>
+          <span style="font-size:1.6rem;font-weight:800;color:#6366f1">17</span>
+        </div>
+        <div style="text-align:center;color:#334155;font-size:1.1rem;line-height:1;">▼ <span style="font-size:.7rem;color:#475569">41.2%</span></div>
+        <div style="width:86%;margin:0 auto;background:#818cf818;border:1px solid #818cf844;
+                    border-radius:10px;padding:14px 20px;display:flex;
+                    justify-content:space-between;align-items:center;">
+          <span style="font-size:.9rem;color:#cbd5e1;font-weight:600">Entregues</span>
+          <span style="font-size:1.6rem;font-weight:800;color:#818cf8">7</span>
+        </div>
+        <div style="text-align:center;color:#334155;font-size:1.1rem;line-height:1;">▼ <span style="font-size:.7rem;color:#475569">0.0%</span></div>
+        <div style="width:72%;margin:0 auto;background:#a78bfa18;border:1px solid #a78bfa44;
+                    border-radius:10px;padding:14px 20px;display:flex;
+                    justify-content:space-between;align-items:center;">
+          <span style="font-size:.9rem;color:#cbd5e1;font-weight:600">Abertos</span>
+          <span style="font-size:1.6rem;font-weight:800;color:#a78bfa">0</span>
+        </div>
+        <div style="text-align:center;color:#334155;font-size:1.1rem;line-height:1;">▼ <span style="font-size:.7rem;color:#475569">—</span></div>
+        <div style="width:58%;margin:0 auto;background:#c4b5fd18;border:1px solid #c4b5fd44;
+                    border-radius:10px;padding:14px 20px;display:flex;
+                    justify-content:space-between;align-items:center;">
+          <span style="font-size:.9rem;color:#cbd5e1;font-weight:600">Respondidos</span>
+          <span style="font-size:1.6rem;font-weight:800;color:#c4b5fd">0</span>
+        </div>
+    </div>
+  </section>
+      
+  <section class="card" style="margin-bottom:24px">
+    <h2 class="section-title">📊 Taxas de Engajamento</h2>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Taxa de Entrega</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#ef4444">41.2%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:41%;background:#ef4444;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≥95%  ·  Atenção <90%</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Taxa de Abertura</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#ef4444">0.0%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:0%;background:#ef4444;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≥30%  ·  Atenção <20%</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Taxa de Resposta</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#ef4444">0.0%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:0%;background:#ef4444;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≥5%   ·  Atenção <2%</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Hard Bounce</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#22c55e">0.0%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:0%;background:#22c55e;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≤1%   ·  Crítico >2%</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Spam Bloqueado</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#22c55e">0.0%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:0%;background:#22c55e;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≤0.5% ·  Crítico >1%</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:.875rem;color:#94a3b8">Descadastros</span>
+          <span style="font-size:1.25rem;font-weight:800;color:#22c55e">0.0%</span>
+        </div>
+        <div style="background:#1e2535;border-radius:6px;height:10px;margin-top:6px;"><div style="width:0%;background:#22c55e;height:10px;border-radius:6px;transition:width .4s ease;"></div></div>
+        <div style="font-size:.7rem;color:#475569;margin-top:3px">Bom ≤0.3% ·  Atenção >0.5%</div>
+      </div>
+    </div>
+  </section>
+      
+  <section class="card" style="margin-bottom:24px">
+    <h2 class="section-title">📌 Indicadores de Entregabilidade</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px">
+      
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#22c55e">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">🗓️ Reuniões</div>
+      </div>
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#f59e0b">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">↩️ Total Bounces</div>
+      </div>
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#ef4444">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">❌ Hard Bounce</div>
+      </div>
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#f97316">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">⏳ Soft Bounce</div>
+      </div>
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#ec4899">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">🚫 Spam Bloq.</div>
+      </div>
+      <div style="background:#0f1117;border:1px solid #1e2535;border-radius:10px;
+                  padding:16px;text-align:center;">
+        <div style="font-size:1.6rem;font-weight:800;color:#64748b">0</div>
+        <div style="font-size:.75rem;color:#64748b;margin-top:4px;text-transform:uppercase;
+                    letter-spacing:.05em">🔕 Descadastros</div>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#334155;margin-top:14px;font-style:italic">
+      ⚠️ "Spam Bloqueado" = e-mails rejeitados pelo servidor antes da entrega.
+      Se o e-mail caiu na pasta spam do destinatário não é rastreável via API.
+    </p>
+  </section>
+    </div>
+
+    <!-- Coluna direita: tabela + insights -->
+    <div>
+      
+  <section class="card" style="margin-bottom:24px">
+    <h2 class="section-title">📋 Sequências</h2>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:.83rem">
+        <thead>
+          <tr style="border-bottom:1px solid #1e2535;color:#475569;font-size:.75rem;
+                     text-transform:uppercase;letter-spacing:.06em">
+            <th style="padding:8px 12px;text-align:left">Sequência</th>
+            <th style="padding:8px 12px;text-align:left">Status</th>
+            <th style="padding:8px 12px;text-align:right">Disparados</th>
+            <th style="padding:8px 12px;text-align:right">Entregues</th>
+            <th style="padding:8px 12px;text-align:right">Abertos</th>
+            <th style="padding:8px 12px;text-align:right">Respondidos</th>
+            <th style="padding:8px 12px;text-align:right">Hard Bounce</th>
+            <th style="padding:8px 12px;text-align:right">Spam Bloq.</th>
+          </tr>
+        </thead>
+        <tbody style="color:#94a3b8">
+          
+        <tr>
+          <td style="padding:10px 12px;color:#cbd5e1;font-weight:500">Ead - Candência</td>
+          <td style="padding:10px 12px;font-size:.8rem"><span style="color:#22c55e">●</span> Ativa</td>
+          <td style="padding:10px 12px;text-align:right">17</td>
+          <td style="padding:10px 12px;text-align:right">7</td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px;color:#cbd5e1;font-weight:500">Cadência - Provável intenção de compra.</td>
+          <td style="padding:10px 12px;font-size:.8rem"><span style="color:#475569">● </span>Inativa</td>
+          <td style="padding:10px 12px;text-align:right">0</td>
+          <td style="padding:10px 12px;text-align:right">0</td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px;color:#cbd5e1;font-weight:500">Prospecção EdTech - Infraestrutura de Vídeo</td>
+          <td style="padding:10px 12px;font-size:.8rem"><span style="color:#475569">● </span>Inativa</td>
+          <td style="padding:10px 12px;text-align:right">0</td>
+          <td style="padding:10px 12px;text-align:right">0</td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right">0
+            <div style="font-size:.75rem;color:#ef4444;font-weight:700">0.0%</div></td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+          <td style="padding:10px 12px;text-align:right;color:#22c55e;font-weight:700">0.0%</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+      
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-bottom:24px">
+    <section class="card">
+      <h2 class="section-title">🧠 Resumo Executivo</h2>
+      <div class="insight-body"><h3>Resumo Executivo de Vendas — Apollo.io</h3>
+<p>---</p>
+<h4>1. Situação Atual</h4>
+<ul>
+<li>A operação de prospecção está em <strong>estágio embrionário e com fundamentos comprometidos</strong>: apenas 17 e-mails disparados, taxa de entrega crítica de 41,2% e zero aberturas ou respostas registradas — sinais que indicam falha técnica antes mesmo de qualquer problema comercial.</li>
+<li>A base de contatos, embora volumosa no total da plataforma (239M+ contatos, 32M+ organizações), apresenta <strong>100% dos registros exportados sem dados essenciais</strong> (nome, e-mail, localização, LinkedIn), tornando qualquer campanha ativa inviável no formato atual.</li>
+<li>Das três sequências criadas, <strong>apenas uma está ativa</strong> e com desempenho abaixo de qualquer benchmark aceitável; as outras duas estão inativas e sem dados — a operação está, na prática, <strong>paralisada sem diagnóstico claro.</strong></li>
+</ul>
+<p>---</p>
+<h4>2. Top 3 Oportunidades Imediatas</h4>
+<ul>
+<li><strong>🎯 Base de decisores de alto nível disponível:</strong> 68% dos contatos identificados são C-Level ou Founders (CEO, CFO, Chairman) em organizações relevantes. Quando corretamente enriquecidos, esse segmento representa <strong>o maior potencial de conversão e ticket da base atual</strong> — o trabalho de curadoria já foi parcialmente feito.</li>
+</ul>
+<ul>
+<li><strong>🎯 Duas sequências prontas aguardando ativação:</strong> "Cadência - Provável intenção de compra" e "Prospecção EdTech - Infraestrutura de Vídeo" estão criadas mas inativas. Com os problemas técnicos resolvidos e listas validadas, <strong>essas sequências podem ser ativadas rapidamente</strong> sem necessidade de construção do zero.</li>
+</ul>
+<ul>
+<li><strong>🎯 Volume de dados da plataforma ainda inexplorado:</strong> O Apollo.io contratado dá acesso a mais de 239 milhões de contatos e 32 milhões de organizações. A operação ainda <strong>não utilizou 0,001% do potencial disponível</strong> — há espaço significativo para construir uma lista qualificada, segmentada e enriquecida com filtros corretos.</li>
+</ul>
+<p>---</p>
+<h4>3. Top 3 Riscos e Pontos de Atenção</h4>
+<ul>
+<li><strong>🔴 Risco de reputação de domínio em deterioração silenciosa:</strong> Uma taxa de entrega de 41,2% com zero bounces registrados é tecnicamente anômala — os 10 e-mails não entregues estão provavelmente sendo <strong>descartados silenciosamente por filtros de gateway</strong> (Google Workspace, Microsoft 365) sem gerar evento rastreável. Se os envios continuarem sem correção, o domínio pode ser progressivamente bloqueado, comprometendo toda a operação futura de e-mail.</li>
+</ul>
+<ul>
+<li><strong>🟠 Base de dados inutilizável no estado atual:</strong> Exportar contatos sem nome, e-mail, localização ou LinkedIn significa que <strong>não há como personalizar, segmentar ou sequer enviar comunicações.</strong> Campanhas lançadas sobre essa base terão retorno próximo de zero e ainda consomem créditos da plataforma e reputação do domínio de envio.</li>
+</ul>
+<ul>
+<li><strong>🟡 Mix de contatos inadequado para prospecção realista:</strong> A presença de figuras públicas de nível global (Amazon, BlackRock, Virgin, Tony Robbins) em uma lista de prospecção ativa <strong>distorce expectativas e desperdiça esforço.</strong> Sem uma definição clara de ICP (Ideal Customer Profile), a base continuará sendo um agregado de nomes sem potencial real de conversão.</li>
+</ul>
+<p>---</p>
+<h4>4. Plano de Ação — Próximos 30 Dias</h4>
+<p><strong>Semana 1 — Estabilização Técnica (Base para tudo mais)</strong></p>
+<ul>
+<li><strong>✅ Ação 1 — Auditar e corrigir a infraestrutura de e-mail:</strong></li>
+</ul>
+<p>Acessar Apollo.io > Settings > Mailboxes e verificar o health score da caixa conectada. Confirmar que o domínio de envio possui <strong>SPF, DKIM e DMARC configurados corretamente</strong> via MXToolbox (mxtoolbox.com). Pausar a sequência "Ead - Candência" até a infraestrutura estar validada. *Responsável: TI / RevOps. Prazo: até 48h.*</p>
+<ul>
+<li><strong>✅ Ação 2 — Corrigir a exportação de contatos no Apollo:</strong></li>
+</ul>
+<p>Revisar os filtros de busca utilizados e reexportar a lista garantindo que os campos <strong>nome, e-mail verificado, empresa, cargo, localização e LinkedIn</strong> estejam preenchidos. Validar os e-mails exportados com NeverBounce ou ZeroBounce antes de qualquer envio. *Responsável: SDR / Ops. Prazo: até o final da semana 1.*</p>
+<p><strong>Semanas 2 e 3 — Reconstrução Qualificada</strong></p>
+<ul>
+<li><strong>✅ Ação 3 — Definir e documentar o ICP (Ideal Customer Profile):</strong></li>
+</ul>
+<p>Com base no foco das sequências existentes (EdTech, infraestrutura de vídeo, EAD), definir formalmente: porte de empresa, cargo-alvo, setor, localização e dores prioritárias. Usar esse ICP para <strong>filtrar e construir uma nova lista no Apollo</strong> com 50 a 100 contatos qualificados — volume controlado para validação. *Responsável: Líder Comercial. Prazo: semana 2.*</p>
+<p><strong>Semana 4 — Reativação com Controle</strong></p>
+<ul>
+<li><strong>✅ Ação 4 — Reativar sequências com lista limpa e em volume controlado:</strong></li>
+</ul>
+<p>Com infraestrutura validada e lista enriquecida, reativar a sequência mais relevante ao ICP definido (provavelmente "Prospecção EdTech -</p></div>
+    </section>
+    <section class="card">
+      <h2 class="section-title">📧 Análise de Sequências</h2>
+      <div class="insight-body"><h3>Análise de Sequências de E-mail — Apollo.io</h3>
+<p>---</p>
+<h4>Visão Geral Rápida</h4>
+<p>| Sequência | Status | Agendados | Entregues | Abertura | Resposta |</p>
+<p>|---|---|---|---|---|---|</p>
+<p>| Ead - Candência | ✅ Ativa | 17 | 7 | 0% | 0% |</p>
+<p>| Cadência - Provável intenção de compra | ❌ Inativa | 0 | 0 | — | — |</p>
+<p>| Prospecção EdTech - Infraestrutura de Vídeo | ❌ Inativa | 0 | 0 | — | — |</p>
+<p>---</p>
+<h4>1. Melhor e Pior Desempenho</h4>
+<p><strong>Melhor desempenho relativo:</strong></p>
+<ul>
+<li>Nenhuma sequência apresenta resultado positivo mensurável no momento</li>
+</ul>
+<p><strong>Pior desempenho:</strong></p>
+<ul>
+<li>⚠️ <strong>"Ead - Candência"</strong> — Taxa de entrega de <strong>41,2%</strong> (benchmark mínimo: 95%)</li>
+<li>Das 17 pessoas agendadas, apenas <strong>7 receberam</strong> o e-mail</li>
+<li><strong>10 contatos perdidos</strong> sem entrega, abertura ou resposta registrada</li>
+</ul>
+<p>---</p>
+<h4>2. Problemas de Entregabilidade</h4>
+<ul>
+<li>⚠️ <strong>Taxa de entrega crítica: 41,2%</strong> na única sequência ativa — mais da metade dos envios não chegou ao destino</li>
+<li>Bounces registrados: 0 — o que indica que os e-mails <strong>não estão retornando erro</strong>, mas também <strong>não estão sendo entregues</strong></li>
+<li>Spam bloqueado: 0 registrado — porém a baixa entrega sugere <strong>bloqueio silencioso</strong> (e-mails descartados antes de gerar bounce)</li>
+<li>Possíveis causas:</li>
+<li>Contatos com e-mails inválidos ou mal formatados na lista</li>
+<li>Domínio remetente com reputação baixa ou sem configuração adequada</li>
+<li>Limites de envio do Apollo.io atingidos para a conta/caixa de entrada conectada</li>
+<li>Sequência recém-iniciada com throttling automático da plataforma</li>
+</ul>
+<p>---</p>
+<h4>3. Risco de Reputação do Domínio</h4>
+<p><strong>Nível de risco atual: 🟡 Indeterminado / Atenção Preventiva</strong></p>
+<ul>
+<li>Hard bounces: 0% ✅ — dentro do benchmark</li>
+<li>Spam bloqueado: 0% ✅ — dentro do benchmark</li>
+<li><strong>Porém:</strong> a entrega de apenas 41,2% com zero bounces é um sinal atípico que merece investigação imediata</li>
+<li>Se os e-mails estiverem caindo em spam sem geração de bounce, a <strong>reputação pode estar se deteriorando silenciosamente</strong></li>
+<li>As outras duas sequências estão inativas e sem dados — sem risco imediato, mas sem utilidade operacional</li>
+</ul>
+<p>---</p>
+<h4>4. Recomendações por Sequência</h4>
+<h5>⚠️ Ead - Candência (CRÍTICO)</h5>
+<ul>
+<li><strong>Investigar imediatamente</strong> por que 10 de 17 envios não foram entregues</li>
+<li>Verificar se o domínio possui <strong>SPF, DKIM e DMARC</strong> configurados corretamente</li>
+<li>Auditar a <strong>lista de contatos</strong>: validar os e-mails antes do próximo envio (ferramentas: NeverBounce, ZeroBounce)</li>
+<li>Verificar no Apollo.io se a <strong>caixa de entrada conectada</strong> está com saúde ativa (Settings > Mailboxes)</li>
+<li>Pausar novos envios dessa sequência até identificar a causa raiz</li>
+<li>Testar envio para uma amostra pequena (3–5 contatos conhecidos) para diagnóstico</li>
+</ul>
+<h5>Cadência - Provável intenção de compra (INATIVA / SEM DADOS)</h5>
+<ul>
+<li>Sequência criada mas nunca utilizada</li>
+<li>Avaliar se a estratégia ainda é relevante antes de ativar</li>
+<li>Caso vá ser usada: validar lista, configurar rastreamento e definir critérios de entrada</li>
+</ul>
+<h5>Prospecção EdTech - Infraestrutura de Vídeo (INATIVA / SEM DADOS)</h5>
+<ul>
+<li>Mesma situação — sem dados para análise</li>
+<li>Verificar se foi substituída por outra abordagem ou se ainda está em construção</li>
+</ul>
+<p>---</p>
+<h4>5. Próximos Passos Priorizados</h4>
+<p><strong>🔴 Urgente (fazer hoje)</strong></p>
+<ul>
+<li>Acessar Apollo.io > Settings > Mailboxes e verificar o <strong>health score</strong> da caixa de entrada usada na "Ead - Candência"</li>
+<li>Verificar autenticação de domínio: **SP</li>
+</ul></div>
+    </section>
+    <section class="card">
+      <h2 class="section-title">🛡️ Entregabilidade</h2>
+      <div class="insight-body"><h3>Análise de Entregabilidade de E-mails — Apollo.io</h3>
+<p>---</p>
+<h4>1. 🩺 Diagnóstico Geral</h4>
+<p>⚠️ <strong>Status: ATENÇÃO</strong> — A operação está em estágio muito inicial (volume baixo), mas apresenta uma <strong>taxa de entrega crítica de apenas 41,2%</strong>, o que significa que quase 6 em cada 10 e-mails agendados <strong>não chegaram ao destino</strong>. Com zero aberturas e zero respostas, é impossível distinguir entre problema técnico de entrega e volume insuficiente para gerar dados confiáveis.</p>
+<p>---</p>
+<h4>2. 📦 Análise de Bounces</h4>
+<ul>
+<li>✅ <strong>Hard bounce: 0 (0%)</strong> — Nenhum e-mail retornou por endereço inválido. A lista de contatos, ao menos para os 7 entregues, não apresenta endereços inexistentes detectados</li>
+<li>✅ <strong>Soft bounce: 0 (0%)</strong> — Nenhuma rejeição temporária (caixa cheia, servidor indisponível)</li>
+<li>⚠️ <strong>Ponto de atenção crítico:</strong> Dos 17 e-mails agendados, <strong>apenas 7 foram entregues (41,2%)</strong>. Os <strong>10 e-mails "perdidos" (58,8%)</strong> não aparecem como bounce — isso é um sinal de que podem estar sendo <strong>silenciosamente descartados</strong> antes mesmo de gerar um evento de bounce rastreável</li>
+</ul>
+<p>> 💡 <strong>Interpretação:</strong> Ausência de bounce não é garantia de saúde. E-mails bloqueados em nível de gateway corporativo ou filtros de entrada podem não retornar nenhum código de erro ao Apollo.</p>
+<p>---</p>
+<h4>3. 🚫 Análise de Spam Bloqueado</h4>
+<ul>
+<li>✅ <strong>Spam blocked: 0 (0%)</strong> — Nenhum bloqueio registrado pela API do Apollo</li>
+<li>⚠️ <strong>Limitação importante:</strong> O Apollo só registra spam block quando o servidor destinatário <strong>devolve uma resposta explícita de rejeição</strong>. Filtros silenciosos (como os de grandes corporações e provedores como Google Workspace, Microsoft 365) <strong>não geram esse evento</strong> — o e-mail simplesmente some</li>
+</ul>
+<p>> 💡 O fato de spam\_blocked = 0 <strong>não garante</strong> que os e-mails não estão caindo em spam. Os 10 e-mails não entregues podem estar nessa situação sem qualquer rastreamento.</p>
+<p>---</p>
+<h4>4. 🔥 Risco de Reputação de Domínio/IP</h4>
+<ul>
+<li>⚠️ <strong>Taxa de entrega de 41,2% é um sinal de alerta sério</strong>, independentemente do volume baixo</li>
+<li>⚠️ <strong>Possíveis causas de baixa reputação a investigar:</strong></li>
+<li>Domínio de envio sem registros <strong>SPF, DKIM e DMARC</strong> configurados corretamente</li>
+<li>Domínio novo ou com histórico de envio irregular (warm-up insuficiente)</li>
+<li>IP compartilhado do Apollo com reputação comprometida por outros usuários</li>
+<li>Conteúdo dos e-mails com gatilhos de spam (links encurtados, palavras sensíveis, muitos links)</li>
+<li>⚠️ <strong>Volume insuficiente para confirmar padrão</strong>, mas a proporção de não-entregues é alta demais para ignorar mesmo com N=17</li>
+</ul>
+<p>---</p>
+<h4>5. 🔍 O Que NÃO É Possível Medir via API</h4>
+<p>Seja transparente com as limitações reais do rastreamento:</p>
+<ul>
+<li>❌ <strong>E-mail entregue na pasta spam do destinatário</strong> — O Apollo marca como "entregue" ao ser aceito pelo servidor de destino; se for redirecionado para spam internamente, <strong>não há como saber via API</strong></li>
+<li>❌ <strong>Abertura real vs. abertura por bot/preview</strong> — Pixels de rastreamento são frequentemente disparados por scanners de segurança corporativos, inflando (ou nunca disparando) métricas de abertura</li>
+<li>❌ <strong>Motivo exato dos 10 e-mails não entregues</strong> — A API não detalha se foram descartados silenciosamente, enfileirados, ou bloqueados por política interna do destinatário</li>
+<li>❌ <strong>Reputação do IP de envio em tempo real</strong> — O Apollo não expõe qual IP foi usado nem seu score em blacklists externas (MXToolbox, Spamhaus, etc.)</li>
+<li>❌ <strong>Comportamento pós-clique real</strong> — Cliques em links rastreados via redirect podem ser bloqueados por firewalls corporativos antes de chegarem</li>
+</ul></div>
+    </section>
+  </div>
+    </div>
+  </div>
+
+  <footer>Apollo Cadência Dashboard · Claude (Anthropic) · 20/03/2026 às 14:49</footer>
+
+</body>
+</html>

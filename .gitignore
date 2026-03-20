@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Variáveis de ambiente (nunca commitar)
+.env
+
+# Dashboards gerados individualmente (o index.html é a versão publicada)
+output/
+
+# Logs
+logs/
